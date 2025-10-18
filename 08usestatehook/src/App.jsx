@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [num, setA] = useState(20)
+  const [username, setusername] = useState('Karan')
+  const [user,setuser]=useState({user:'karan',age:20})
+  const [a,seta]=useState(['karan','mukesh,30'])
+
+  let aa =()=>{
+    const newaa = [...a];
+    newaa[0] ='rahul';
+    seta(newaa)
+
+  }
+
+  let array=()=>{
+    const newNum ={...num};
+    newNum.user='Aman'
+    setuser(newNum)
+
+  }
+  
+  let changeNum = ()=>{
+    setA(num+1);
+    setusername('mukesh')
+
+  }
+  let subtract =()=>{
+    setA(num-1);
+  }
+
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>App
+      <h1>vale of num is{num} <br />vale of the user {username} </h1>
+      <button onClick={changeNum} >clickm me</button>
+      <button onClick={subtract} >for subtrack</button>
+      <h1>{user.user},{user.age}</h1>
+      <button onClick={array} >lick kr mc</button>
+      <h1>the value of a is {a[0]} and age is {2}</h1>
+      <button onClick={aa} > dbba na </button>
+    </div>
   )
 }
 

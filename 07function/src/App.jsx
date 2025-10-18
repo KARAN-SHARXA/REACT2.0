@@ -1,25 +1,24 @@
 import React from 'react'
 
-const App = () => {
-  const btnclic=()=>{
-    alert("ram ram mitter")
+function App() {
+  function btnCliked(){
+    console.log('button is clicked');
+    
   }
-
-  const onMouseEnter=()=>{
-    alert("you enter the mohue")
-  }
-
-  const dubleClic=()=>{
-    console.log('button is clickded');
+  function explaore(){
+    console.log('ram');
     
   }
   return (
-    <div>
-      <h1>hello i am karan</h1>
-      <button onMouseEnter={onMouseEnter} onDoubleClick={btnclic} >change user</button>
-      <button onClick={onMouseEnter}>Explore the notation</button>
-      <button onDoubleClick={dubleClic}>clilk me lokesh</button>
+    <div>App
+      <button onClick={btnCliked}>clilk me</button>
+      <button onClick={explaore} >Explore this</button>
+      <input type="text" onChange={(elem)=>{
+        console.log(elem.target.value);
+        
+      }} placeholder='enetr your name' />
     </div>
+    
   )
 }
 
